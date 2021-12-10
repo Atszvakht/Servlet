@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <meta charset="utf-8" />
+        <title>ServletProject</title>
+        <script type="text/javascript" src="C:\Users\ISMAIL\Desktop\Nouveau dossier\angular.js"></script>
+        <link type="text/css" rel="stylesheet" href="Form.css" />
+
+    </head>
+    <body>
+        <form action="MainServlet?action=insert" ng-submit="submit()" method="post">
+            <fieldset>
+                <legend>Ajout d'un Email</legend>
+
+				<label for="ID">ID <span class="requis">*</span></label>
+                <input type="text"  id="ID" name="ID" value="" size="20" maxlength="60" required />
+                <br />
+                
+                <label for="exp">Expediteur <span class="requis">*</span></label>
+                <input type="text" id="exp" name="exp" value="" size="20" maxlength="60" />
+                <br />
+
+                <label for="dest">Destinataire <span class="requis">*</span></label>
+                <input type="text" id="dest" name="dest" value="" size="20" maxlength="20" />
+                <br />
+
+                <label for="sujet">Sujet <span class="requis">*</span></label>
+                <input type="text" id="sujet" name="sujet" value="" size="20" maxlength="20" />
+                <br />
+
+                <label for="objet">Objet <span class="requis">*</span></label>
+                <input type="text" id="objet" name="objet" value="" size="20" maxlength="20" />
+                <br />
+
+                <input type="submit"  class="sansLabel" />
+                
+                <br />
+            </fieldset>
+        </form><br>
+        <form action="MainServlet?action=delete" method="post">
+            <fieldset>
+                <legend>Supression d'un Email</legend>
+
+<label for="IDdelete">ID <span class="requis">*</span></label>
+                <input type="text" id="IDdelete" name="IDdelete" value="" size="20" maxlength="60" />
+                <br />
+                
+                <label for="expdelete">Expediteur <span class="requis">*</span></label>
+                <input type="text" id="expdelete" name="expdelete" value="" size="20" maxlength="60" />
+                <br />
+                
+                <label for="destdelete">Destinataire <span class="requis">*</span></label>
+                <input type="text" id="destdelete" name="destdelete" value="" size="20" maxlength="20" />
+                <br />
+
+                <label for="sujetdelete">Sujet <span class="requis">*</span></label>
+                <input type="text" id="sujetdelete" name="sujetdelete" value="" size="20" maxlength="20" />
+                <br />
+
+                <label for="objetdelete">Objet <span class="requis">*</span></label>
+                <input type="text" id="objetdelete" name="objetdelete" value="" size="20" maxlength="20" />
+                <br />
+                <input type="submit"  class="sansLabel" />
+            </fieldset>
+        </form>
+        <br>
+        <form action="MainServlet?action=search" method="post">
+<fieldset><legend>Chercher un Email</legend>
+<label for="expsearch">Expediteur <span class="requis">*</span></label><input type="text" id="expsearch" name="expsearch" value="" size="20" maxlength="20"/><br/>
+
+<input type="submit" value="search"/>
+</fieldset>
+</form><br>
+<form action="MainServlet?action=fetch" method="post">
+<fieldset><legend>Afficher tous les Emails</legend>
+<input type="submit" value="fetch all data"/>
+</fieldset>
+</form>
+    </body>
+</html>

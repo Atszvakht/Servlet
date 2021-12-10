@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>    
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">      
+        <script type="text/javascript" src="C:\Users\ISMAIL\Desktop\Nouveau dossier\angular.js"></script>
+<script language="javascript" type="text/javascript">
+          angular.module('ATP_PLAYERS', [])
+           .controller('atpController', function ($scope, $http) {
+              $http.get('/ServletEx/MainServlet').success(function (data, status, headers, config) {
+                $scope.atp = data;
+             });
+         });
+        </script>
+    </head>
+    <body ng-app="ATP_PLAYERS">  
+        <div ng-controller="atpController">
+            <h5>Loading ATP players from a Servlet</h5>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Expediteur</th>
+                        <th>Desinataire</th>
+                        <th>Sujet</th>
+                        <th>Objet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in atp">
+                        <td>{{item.exp}}</td>            
+                        <td>{{item.dest}}</td>
+                        <td>{{item.suj}}</td>
+                        <td>{{item.obj}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>    
+     
+        
+    </body>
+</html>
